@@ -7,9 +7,6 @@ import { useGetCities } from '../api/getCities';
 import { MainLayout } from '@/components/Layout';
 
 export const CityList = () => {
-  useEffect(() => {
-    console.log('hola')
-  }, [])
 
   const cities = useGetCities({});
 

@@ -26,6 +26,9 @@ export const useGetCities = ({config}:any) => {
   return useQuery<ExtractFnReturnType<QueryFnType>>({
     queryKey: [],
     queryFn: () => getCities(),
+    onError: () => {
+      console.error('Issue retrieving cities.')
+    },
     ...config,
   });
 };
