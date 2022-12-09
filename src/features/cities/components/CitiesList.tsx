@@ -10,6 +10,7 @@ export interface CityProps {
 export const CitiesList = ({cities}:any) => {
 
   useEffect(() => {
+    setCurrentCities(cities.cities.data)
     console.log(cities.cities.data);
   })
   const [currentCities, setCurrentCities] = useState(cities.cities.data);
@@ -17,7 +18,7 @@ export const CitiesList = ({cities}:any) => {
   return (
     <>
       <h1>Ciudades</h1>
-      {currentCities.map((city: CityProps) => {
+      {currentCities && currentCities.map((city: CityProps) => {
          return <p>{city.nombre}</p>
       })}
 
